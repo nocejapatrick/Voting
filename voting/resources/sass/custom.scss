@@ -1,0 +1,93 @@
+@import 'customvar';
+
+.votees-container{
+    width:100%;
+    height: 525px;
+    overflow: hidden;
+}
+
+.votess-fake-container{
+    width: 114%;
+    margin-left: -90px;
+    margin-top: -41px;
+    height: 160%;
+}
+
+
+.votee{
+    width: 33.33%;
+    height: 100%;
+    transform: rotate(10deg);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: 1s all ease-in-out;
+}
+
+.votee .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    top: 70%;
+    left: 0;
+    background: rgb(1,1,1);
+    background: linear-gradient(0deg, rgba(1,1,1,1) 23%, rgba(0,212,255,0) 96%);
+    transition: .4s all ease-in-out;
+}
+
+.votee .overlay h3{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-70%,-50%) rotate(-10deg);
+    opacity: 0;
+    transition: .4s .4s all ease-in-out;
+}
+
+.votee:hover .overlay{
+    top: 0%;
+    opacity: 1;
+}
+
+.votee:hover .overlay h3{
+    opacity: 1;
+    transform: translate(-8%,-50%) rotate(-10deg);
+}
+.votee img{
+    transform: translate(-100%) rotate(-10deg);
+    opacity: 0;
+    margin-left: -90px;
+    width: 140%;
+}
+
+
+.votess-fake-container .votee:nth-child(1) img{
+    animation: slide 2s ease-in-out 0s forwards;
+}
+
+.votess-fake-container .votee:nth-child(2) img{
+    animation: slide 2s ease-in-out .7s forwards;
+}
+
+.votess-fake-container .votee:nth-child(3) img{
+    animation: slide 2s ease-in-out 1.2s forwards;
+}
+
+@keyframes slide{
+    from{
+        transform: translateY(-100%) rotate(-10deg); 
+        opacity: 0;
+    }
+    to{
+        transform: translateY(-17%) rotate(-10deg); 
+        opacity: 1;
+    }
+}
+
+
+
+.all-votes-container:not(:first-child){
+    margin: 30px 0px;
+}
